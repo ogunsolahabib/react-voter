@@ -10,8 +10,6 @@ class PartyPanel extends React.Component {
       {name: "yomi", id: "789"},
       {name: "dimola", id: "369"}
     ];
-    const voterIds = voters.map(voter => voter.id);
-    const voterNames = voters.map(voter => voter.name);
     let newFan = {
       name: document.querySelector(`#${this.props.party}-name`).value,
       id: document.querySelector(`#${this.props.party}-id`).value
@@ -19,18 +17,14 @@ class PartyPanel extends React.Component {
 
     let newList = [];
 
-    const votedIds = this.props.voted.map(voter => voter.id);
-    console.log(votedIds);
-
     if (
-      voterIds.indexOf(newFan.id) !== -1 &&
-      voterNames.indexOf(newFan.name) !== -1 &&
+      voters.some(voter => {
+        return voter.name === newFan.name && voter.id === newFan.id;
+      }) &&
       this.props.voted.map(voter => voter.id).indexOf(newFan.id) === -1
     ) {
       this.props.onVote(newFan);
-
       newList.push(newFan);
-
       this.setState({fans: [...this.state.fans, newList]});
       document.querySelector(`#${this.props.party}-name`).value = "";
       document.querySelector(`#${this.props.party}-id`).value = "";

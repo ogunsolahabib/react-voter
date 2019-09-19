@@ -9,8 +9,8 @@ const votersArray = [
 const Voters = () => {
   const VotersList = votersArray.map(voter => {
     return (
-      <div>
-        <Voter key={voter.id} name={voter.name} cardNum={voter.id} />
+      <div key={voter.id}>
+        <Voter name={voter.name} cardNum={voter.id} />
       </div>
     );
   });
