@@ -44,8 +44,8 @@ class PartyPanel extends React.Component {
         <div className="count">{this.state.fans.length}</div>
         <div>
           <form onSubmit={this.onFormSubmit.bind(this)}>
-            <label>Voter's Name</label>
-            <div>
+            <div className="input_field">
+              <label>Name: </label>
               <input
                 id={`${this.props.party}-name`}
                 type="text"
@@ -53,13 +53,13 @@ class PartyPanel extends React.Component {
                 placeholder="Enter Your Name"
               />
             </div>
-            <label>Voter's ID</label>
-            <div>
+            <div className="input_field">
+              <label>Card No: </label>
               <input
                 id={`${this.props.party}-id`}
                 type="text"
                 name="id"
-                placeholder="Enter ID"
+                placeholder="Enter Card Number"
               />
             </div>
 

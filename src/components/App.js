@@ -15,20 +15,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="two-col">
-        <PartyPanel
-          party="APC"
-          id="apc"
-          onVote={this.onPanelVote.bind(this)}
-          voted={this.state.voted}
-        />
+      <div className="container">
+        <div className="two-col">
+          <PartyPanel
+            party="APC"
+            id="apc"
+            onVote={this.onPanelVote.bind(this)}
+            voted={this.state.voted}
+          />
 
-        <PartyPanel
-          party="PDP"
-          id="pdp"
-          onVote={this.onPanelVote.bind(this)}
-          voted={this.state.voted}
-        />
+          <PartyPanel
+            party="PDP"
+            id="pdp"
+            onVote={this.onPanelVote.bind(this)}
+            voted={this.state.voted}
+          />
+        </div>
       </div>
     );
   }
