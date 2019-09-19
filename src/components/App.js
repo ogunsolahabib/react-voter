@@ -1,5 +1,6 @@
 import React from "react";
 import PartyPanel from "./PartyPanel";
+import Voters from "./Voters";
 
 class App extends React.Component {
   state = {voted: []};
@@ -16,20 +17,25 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="two-col">
-          <PartyPanel
-            party="APC"
-            id="apc"
-            onVote={this.onPanelVote.bind(this)}
-            voted={this.state.voted}
-          />
+        <div className="grid">
+          <div className="panels">
+            <PartyPanel
+              party="APC"
+              id="apc"
+              onVote={this.onPanelVote.bind(this)}
+              voted={this.state.voted}
+            />
 
-          <PartyPanel
-            party="PDP"
-            id="pdp"
-            onVote={this.onPanelVote.bind(this)}
-            voted={this.state.voted}
-          />
+            <PartyPanel
+              party="PDP"
+              id="pdp"
+              onVote={this.onPanelVote.bind(this)}
+              voted={this.state.voted}
+            />
+          </div>
+          <div className="voters">
+            <Voters />
+          </div>
         </div>
       </div>
     );

@@ -7,12 +7,18 @@ const votersArray = [
   {name: "dimola", id: "369"}
 ];
 const Voters = () => {
-  return votersArray.map(voter => {
+  const VotersList = votersArray.map(voter => {
     return (
       <div>
-        <Voter key={voter.id} name={voter.name} />
+        <Voter key={voter.id} name={voter.name} cardNum={voter.id} />
       </div>
     );
   });
+  return (
+    <div>
+      <h1>Eligible Voters</h1>
+      {VotersList}
+    </div>
+  );
 };
 export default Voters;

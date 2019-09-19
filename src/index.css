@@ -17,10 +17,15 @@ code {
   justify-content: center;
   min-height: 100vh;
 }
-.two-col {
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 1em;
+}
+.panels {
   border: 1px solid #000000;
   display: grid;
-  grid-template-columns: repeat(2, 500px);
+  grid-template-columns: repeat(2, 400px);
   grid-gap: 1em;
   padding: 5em 1em;
   border-radius: 1em;
@@ -63,7 +68,20 @@ input[type="submit"] {
   border: none;
   border-radius: 1em;
   cursor: pointer;
+  outline: none;
 }
 input[type="submit"]:hover {
   background: #000000;
+}
+.voter_name,
+.voter_id {
+  display: inline-block;
+}
+.voter_name {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-right: 1em;
+}
+.voter_id {
+  font-size: 1.5em;
 }
