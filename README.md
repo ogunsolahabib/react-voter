@@ -2,7 +2,7 @@
 
 Simple Voting App
 
-https://simple-react-app.netlify.com
+https://simple-react-voter.netlify.com
 
 # Features!
 
