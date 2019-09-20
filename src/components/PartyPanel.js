@@ -16,7 +16,6 @@ class PartyPanel extends React.Component {
     };
 
     let newList = [];
-
     if (
       voters.some(voter => {
         return voter.name === newFan.name && voter.id === newFan.id;
@@ -28,6 +27,19 @@ class PartyPanel extends React.Component {
       this.setState({fans: [...this.state.fans, newList]});
       document.querySelector(`#${this.props.party}-name`).value = "";
       document.querySelector(`#${this.props.party}-id`).value = "";
+    } else if (
+      voters.some(voter => {
+        return voter.name === newFan.name && voter.id === newFan.id;
+      }) &&
+      this.props.voted.map(voter => voter.id).indexOf(newFan.id) !== -1
+    ) {
+      alert("You have voted earlier!");
+    } else if (
+      voters.some(voter => {
+        return voter.name !== newFan.name || voter.id !== newFan.id;
+      })
+    ) {
+      alert("Those don't match any of our records!");
     }
   };
 
